@@ -107,9 +107,9 @@ $PAGE_DESCRIPTION_DEFAULT = "MeringCarson is a full-service advertising agency o
                     </div>
                     <div class="three columns">
                         <em><i class="icon-flag"></i>So Cal</em><br>
-                        1010 South Coast Hwy 101<br>
-                        Suite 105<br>
-                        Encinitas, CA 92024<br>
+                        624 Broadway<br>
+                        Suite 502<br>
+                        San Diego, Ca. 92101<br>
                         Phone (760) 635-2100<br>
                         Fax (760) 635-2106
                     </div>
