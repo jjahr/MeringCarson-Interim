@@ -17,10 +17,6 @@ $PAGE_IS_INDEX; // if false, then the header shows the small logo.
 $PAGE_BODYID; // id attribute to put on body
 $PAGE_DESCRIPTION; // 
 $PAGE_DESCRIPTION_DEFAULT = "MeringCarson is a full-service advertising agency offering strategic planning, creative development, interactive and media buying services and specializes in serving the advertising needs of California businesses. The agency owns offices in Sacramento and Encinitas, California, and caters to clients in such industries as travel and tourism, consumer goods, entertainment, financial services, and health care.";
-$ROOT; // path to root
-if( !$ROOT) {
-    $ROOT = "";
-}
 ?>
 
 
@@ -55,8 +51,8 @@ if( !$ROOT) {
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <link rel="stylesheet" href="<?php echo $ROOT ?>css/main.css">
-        <script src="<?php echo $ROOT ?>js/vendor/modernizr-2.6.2.min.js"></script>
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
     <body class="">
         <!--[if lt IE 7]>
@@ -65,54 +61,57 @@ if( !$ROOT) {
 
         <!-- Add your site or application content here -->
 
-        <div id="topnav">
-            <ul class="logo">
-                <li><a href="<?php echo $ROOT ?>#" onClick="_gaq.push(['_trackEvent', 'Header', 'Menu Button (mobile)', '']);" class="img menuButton"></a></li>
-                <li><a href="<?php echo $ROOT ?>#" onClick="_gaq.push(['_trackEvent', 'Header', 'Home (Logo)', '']);" class="img mc"></a></li>
-            </ul>
-            <div class="menu">
-                <ul class="pages">
-                    <li><a href="<?php echo $ROOT ?>#" onClick="_gaq.push(['_trackEvent', 'Header', 'Home (Text Link)', '']);" class="
-                        <?php
-                            if( $PAGE_TITLE == "Home" ) {
-                                echo( ' active' );
-                            }
-                        ?>
-                    ">Home</a></li>
-                    <li class="contactDiv"><a href="
-                        <?php
-                            if( $PAGE_TITLE == "Contact" ) {
-                                echo( '#' );
-                            } else {
-                                echo( 'contact');
-                            }
-                        ?>" class=" 
-                        <?php
-                            if( $PAGE_TITLE == "Contact" ) {
-                                echo( ' active' );
-                            }
-                        ?>
-                    ">Contact</a></li>
-                    <li><a href="careers" onClick="trackOutboundLink(this,'Header','Careers'); return false;" class="
-                        <?php
-                            if( $PAGE_TITLE == "Careers" ) {
-                                echo( ' active' );
-                            }
-                        ?>
-                    ">Careers</a></li>
+        <div id="topnav" class="row utilities hide-for-small">
+            <div class="twelve columns">
+                <ul>
+                    <li class="emceeLink"><a href="http://designemcee.com/" onClick="trackOutboundLink(this,'Header','Emcee Design'); return false;" target="_blank" title="Visit our partners at Emcee Design"></a></li>
+                    <li class="homeDiv
+                    <?php
+                        if( $PAGE_IS_INDEX == true ) {
+                            echo( ' active' );
+                        }
+                    ?>
+                    "><a href="index.php" onClick="trackOutboundLink(this,'Header','Home'); return false;" alt="Home">Home</a></li>
+                    <li class="careersDiv
+                    <?php
+                        if( $PAGE_TITLE == "Careers" ) {
+                            echo( ' active' );
+                        }
+                    ?>
+                    "><a href="careers.php" onClick="trackOutboundLink(this,'Header','Careers'); return false;" alt="Careers">Careers</a></li>
+                    <!--<li class="servicesDiv"><a href="#" alt="Services">Services</a></li>-->
+                    <li class="contactDiv"><a href="#" onClick="_gaq.push(['_trackEvent', 'Header', 'Contact', '']);" title="Contact">Contact <i class="icon-down-dir" style="font-size:0.8em;"></i></a></li>
+                    <li class="social">
+                        <a target="_blank" href="http://twitter.com/meringcarson" onClick="trackOutboundLink(this,'Header','Twitter'); return false;" alt="@meringcarson on Twitter"><img src="img/social-tw.png" alt="Twitter"></a>&nbsp;
+                        <a target="_blank" href="http://www.linkedin.com/company/meringcarson" onClick="trackOutboundLink(this,'Header','Linkedin'); return false;" alt="MeringCarson on Linkedin"><img src="img/social-in.png" alt="Linkedin"></a>&nbsp;
+                        <a target="_blank" href="http://www.facebook.com/MeringCarson" onClick="trackOutboundLink(this,'Header','Facebook'); return false;" alt="@meringcarson on Facebook"><img src="img/social-fb.png" alt="Facebook"></a></li>
+
+
                 </ul>
-                <div class="more">
-                    <ul class="sister-sites">
-                        <li><a href="http://www.designemcee.com" onClick="trackOutboundLink(this,'Header','Emcee Design'); return false;" target="_blank" class="emcee img" alt="Emcee Design"></a></li>
-                    </ul>
-                    <ul class="social">
-                        <li><a href="http://move.meringcarson.com" onClick="trackOutboundLink(this,'Header','Blog'); return false;" class="blog img" alt="MeringCarson Blog"><span>Blog</span></a></li>
-                        <li><a href="http://www.youtube.com/meringcarson" onClick="trackOutboundLink(this,'Header','Youtube'); return false;" target="_blank" class="youtube img" alt="MeringCarson on Youtube"></a></li>
-                        <li><a href="http://www.twitter.com/meringcarson" onClick="trackOutboundLink(this,'Header','Twitter'); return false;" target="_blank" class="twitter img" alt="Follow MeringCarson on Twitter"></a></li>
-                        <li><a href="http://www.linkedin.com/company/meringcarson" onClick="trackOutboundLink(this,'Header','Linkedin'); return false;" target="_blank" class="linkedin img" alt="MeringCarson on Linkedin"></a></li>
-                        <li><a href="http://www.facebook.com/MeringCarson" onClick="trackOutboundLink(this,'Header','Facebook'); return false;" target="_blank" class="facebook img" alt="Follow MeringCarson on Facebook"></a></li>
-                    </ul>
-                </div>
             </div>
         </div>
-        <div id="container">
+        <div class="utilities contact" id="contactDiv" style="height:auto;">
+                <div class="row" style="padding: 16px 0 6px 28px; margin: 0 0 0 auto;">
+                    <div class="three columns hide-for-small"></div>
+                    <div class="three columns">
+                        <em><i class="icon-mail-alt"></i>Email</em><br>
+                        <a href="mailto:info@meringcarson.com">info@meringcarson.com</a>
+                    </div>
+                    <div class="three columns">
+                        <em><i class="icon-flag"></i>Nor Cal</em><br>
+                        1700 I St<br>
+                        Suite 210<br>
+                        Sacramento, CA 95811<br>
+                        Phone (916) 441-0571<br>
+                        Fax (916) 441-1370
+                    </div>
+                    <div class="three columns">
+                        <em><i class="icon-flag"></i>So Cal</em><br>
+                        1010 South Coast Hwy 101<br>
+                        Suite 105<br>
+                        Encinitas, CA 92024<br>
+                        Phone (760) 635-2100<br>
+                        Fax (760) 635-2106
+                    </div>
+                </div>
+            </div>

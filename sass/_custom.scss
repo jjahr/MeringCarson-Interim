@@ -1,8 +1,83 @@
-@import "compass/utilities/color";
+/* =============================
+Custom 
+=============================== */
+
+@font-face {
+    font-family: 'latobold';
+    src: url('../font/lato-bold-webfont.eot');
+    src: url('../font/lato-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/lato-bold-webfont.woff') format('woff'),
+         url('../font/lato-bold-webfont.ttf') format('truetype'),
+         url('../font/lato-bold-webfont.svg#latobold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'latolight';
+    src: url('../font/lato-light-webfont.eot');
+    src: url('../font/lato-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/lato-light-webfont.woff') format('woff'),
+         url('../font/lato-light-webfont.ttf') format('truetype'),
+         url('../font/lato-light-webfont.svg#latolight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'latobold_italic';
+    src: url('../font/lato-bolditalic-webfont.eot');
+    src: url('../font/lato-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/lato-bolditalic-webfont.woff') format('woff'),
+         url('../font/lato-bolditalic-webfont.ttf') format('truetype'),
+         url('../font/lato-bolditalic-webfont.svg#latobold_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'latolight_italic';
+    src: url('../font/lato-lightitalic-webfont.eot');
+    src: url('../font/lato-lightitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/lato-lightitalic-webfont.woff') format('woff'),
+         url('../font/lato-lightitalic-webfont.ttf') format('truetype'),
+         url('../font/lato-lightitalic-webfont.svg#latolight_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+$latolight: "latolight", Helvetica, Arial, sans-serif;
+$sans-serif: Helvetica, Arial, sans-serif;
+
+html,body {
+    background-color: #eee;
+}
+
+h1,h2,h3,h4,h5,em {
+    font-family: $latolight;
+    font-weight: normal;
+    line-height: 1.1em;
+    margin-bottom: 0;
+}
+
+html {
+    font-family: $sans-serif;
+}
 
 
 /* =============================
-Page Structure
+Basic Styles
 ================================ */
 
 html,body {
@@ -13,7 +88,7 @@ html,body {
 }
 html {
     background-image: url(../img/bkg.jpg);
-    background-position: center 50px; // align with bottom of topnav;
+    background-position: center center;
     background-repeat: repeat;
     background-color: #333;
     background-size: 700px;
@@ -23,280 +98,267 @@ html {
     min-height: 360px;
 }
 
-#container {
-    width: 100%;
-}
-
 
 /* ==========================
-Typography
+Nav Bar
 ============================= */
-
-html {
-    font-family: $sans-serif;
+$nav-background: #1a1a1a;
+$nav-text: #fff;
+#topnav, .utilities {
+    font-family: $latolight;
 }
-h1,h2,h3,h4,h5,em {
-    font-family: $lato-light;
-    font-weight: normal;
-    line-height: 1.1em;
-    margin-bottom: 0;
-}
-h1 {
-    font-size: 3.25em;
-}
-h2 {
-    font-size: 1.8em;
-    line-height: 1.3em;
-    letter-spacing: 0.01em;
-}
-
-/* ==========================
-Buttons
-============================= */
-$btn-orange-background: #b06b3f;
-.btn {
-    display: inline-block;
-    text-decoration: none;
-    margin: 0.2em 0.4em;
-    padding: 0.4em 1.2em 0.5em;
-    font-size: 1.2em;
-    color: white;
-    background-color: $btn-orange-background;
-    &:hover {
-        background-color: darken($btn-orange-background, 6%);
-    }
-}
-
-
-/* ==========================
-Helpers
-============================= */
-.hide-for-small {
-    display: none !important;
-}
-.show-for-small {
-    display: inherit !important;
-}
-@media only screen and (min-width:640px) {
-    .hide-for-small {
-        display: inherit !important;
-    }
-    .show-for-small {
-        display: none !important;
-    }
-}
-
-/* ==========================
-Navigation
-============================= */
-$nav-background: #3c3d40;
-$nav-text-hover: #fff9f2;
-$nav-text: darken($nav-text-hover, 20%);
 #topnav {
-    width: 100%;
-    height: 50px;
+    li.social {
+        a {
+            position: relative;
+            display: inline-block;
+            opacity: 0.6;
+            &:hover {
+                opacity: 1;
+            }
+            //Small
+            width: 22px;
+        }
+        img {
+            position:absolute; 
+            top: -18px;
+            left: 0px;
+            //Small
+            width:22px;
+            height:22px;
+        }
+    }    
+}
+.emceeLink {
+    a {
+        display: inline-block;
+        width: 86px;
+        height: 23px;
+        margin: -3px 12px 0 0;
+        position: relative;
+        top: 6px;
+        background: url(../img/emceelink.png);
+        background-position: 0px 0px;
+        &:hover {
+            background-position: 0px 23px;
+        }
+    }
+}
+
+.utilities {
+    width:  100%;
     background-color: $nav-background; //rgba(0,0,0,0.6);
-    margin: 0;
-    padding: 0;
-    font-family: $lato;
-    letter-spacing: 0.02em;
-    font-size: 1.03em;
+    text-align: right;
+    letter-spacing: 1px;
     line-height: 1.05em;
-    // Font size declared below in responsive.
-// logo, pages, sister-sites, social
+    //padding-right: 16px;
+    
+    .row {
+        //padding: 
+    }
+    
+    a {
+        text-decoration: none;
+        color:  #bfbbb2;
+        // font-size:  2 rem;
+        text-transform: uppercase;
+        &:hover { 
+            color:  white; 
+            border-bottom: none;
+        }   
+    }
+    i {
+        margin: 0px -2px;
+    }
+    i.big {
+        // Icons
+        font-size: 1.3em;
+        position: relative;
+        top: 2px;
+    }
+
     ul {
         position: relative;
-        list-style-type: none;
-        text-align: left;
-        width: auto;
-        height: auto;
+        top: 3px;
         margin: 0;
-        padding: 0;
+        list-style-type: none;
+        text-align: right;
+        
         li {
+            display:  inline;
+            margin-left:  -2px;
+            padding: 10px 8px;
+            
+//          a.social {
+//              display: inline-block;
+//              width:  18px;
+//              height: 18px;
+//              position: relative;
+//              top: 4px;
+//              background: url(../images/social.png);
+//              background-position: 0px 0px;
+//              &:hover { background-position: 0px -18px; }
+//              
+//          }
+//          
+//          a.linkedin {
+//              background-position: -18px 0px;
+//              &:hover { background-position: -18px -18px; }
+//          }
+
+        }
+        li:last-child {
+            padding-right: 0px;
+        }
+
+        li.active {
+            background: $nav-background;
+            
+            a {
+                color: $nav-text;
+            }
+        }
+        
+        
+    }
+
+}
+.lt-ie9 {
+    .utilities {
+        height: 40px;
+    }
+}
+.lt-ie8 {
+    .utilities {
+
+        ul li {
+            position: relative;
+            top: 6px;
+        }
+    }
+    
+    .main {
+        margin-top: 40px;
+    }
+}
+
+.contact {
+    background: $nav-background;
+    height: auto;
+    text-align: left;
+    float: right;
+    display: none; // Start hidden
+    color: #ccc;
+    position: relative;
+    margin-bottom: 2em;
+    z-index: 1;
+    //top: -10px; // remove top gap in firefox
+            
+    .column, .columns {
+        padding-bottom: 16px;
+    }
+    
+    em {
+        position: relative;
+        text-transform: uppercase;
+        font-style: normal;
+        color: $nav-text;
+        line-height: 2em;
+        
+        [class*="icon-"]:before {
+            font-size: 1.1em;
+            left: -21px;
+            position: absolute;
+            text-align: right;
+            top: 2px;
+        }
+        
+    }
+}
+
+.utilities ul {
+    margin: 0;
+    padding: 0;
+    li {
+        padding: 10px 2px;
+    }
+}
+
+// Small Styles
+#topnav {
+    padding-top: 4px;
+    font-size: 0.8em;
+    // Small Style
+    text-align: left;
+
+}
+.emceeLink a {
+    margin-right: 0;
+}
+
+.utilities {
+    height: auto;
+}
+
+.utilities ul li.social {
+    display: block;
+    padding: 22px 0 20px;
+}
+
+@media only screen and (min-width:640px) {
+    #topnav {
+        padding-top: 0;
+        font-size: 1.0em;
+    }
+    .utilities {
+        height: 38px;
+    }
+    .utilities ul li {
+        padding: 10px 8px;
+    }
+    .utilities ul li.social {
+        display: inline;
+        padding: 0;
+    }
+
+    .emceeLink a {
+        margin-right: 12px;
+    }
+    #topnav {
+        li.social {
             display: inline;
             a {
-                position: relative;
-                display: inline-block;
-                background-size: contain;
-                color:  #bfbbb2;
-                text-decoration: none;
-                text-transform: uppercase;
-                &:hover { 
-                    color:  white; 
-                    border-bottom: none;
-                }
-                &.active {
-                    color: $orange;
-                    font-family: $lato-black;
-                }
-                &.img {
-                    opacity: 0.6;
-                    &:hover {
-                        opacity: 1;
-                    }
+                width: 24px;
+                img {
+                    width: 24px;
+                    height: 24px;
                 }
             }
-            img {
-                position:absolute; 
-                top: -18px;
-                left: 0px;
-            }
         }
     }
+}
 
-    .logo {
-        display: block;
-        margin: 0 1em 0 3em;
-        // Small style
-        float: none;
+//.lt-ie8 {
+//  .utilities.contact {
+//      .row {
+//          width: 
+//      }
+//      .columns {
+//          float: none;
+//      }
+//}
 
-        .menuButton {
-            // Small style
-            background-image: url(../img/nav/menu.png);
-            width: 33px;
-            height: 33px;
-            position: relative;
-            top: 0.4em;
-            margin-right: 0.5em;
-        }
-        .mc {
-            // Small style
-            background-image: url(../img/nav/meringcarson.png);
-            background-repeat: no-repeat;
-            width: 182px;
-            height: 33px;
-            position: relative;
-            top: 0.65em;
-        }
-
-    }
-    .pages {
-        display: block;
-        margin: 0 1em 0 0;
-        position: relative;
-        top: 1.35em;
-        // Small style
+// Small style
+#contactDiv {
+    .columns {
         float: none;
-        li {
-            // Small
-            display: block;
-            padding: 0.5em 0;
-        }
-    }
-    .menu {
-        // Container for .pages and .more
-        // Small style
-        display: block; // hide it with javascript, man.
-        background-color: $nav-background; //rgba(0,0,0,0.6);
-        padding: 0 1em 0.5em 3em;
-
-    }
-    .more {
-        // Container for right-aligned elements.
-        float: none;
-    }
-    .sister-sites {
-        margin: 0 0.5em 0 0;
-        // Small style
-        float: none;
-        .emcee {
-            background-image: url(../img/nav/emcee.png);
-            width: 112px;
-            height: 30px;
-            top: 0.6em;
-            // Small
-            margin: 1.6em 0 0 0;
-        }
-
-    }
-    .social {
-        margin: 0 3em 0 0;
-        // Small style
-        float: none;
-        li a {
-            display: block;
-            position: relative;
-            top: 0.7em;
-            width: 28px;
-            height: 28px;
-            margin-left: 10px;
-            float: left;
-            background-repeat: no-repeat;
-            background-position: center center;
-        }
-        .blog {
-            background-image: url(../img/nav/rss.png);
-            background-size: 28px 28px;
-            background-position: left center;
-            background-repeat: no-repeat;
-            width: auto;
-            margin-right: 12px;
-            span {
-                // Text is inside this
-                position: relative;
-                top: 0.35em;
-                padding-left: 32px;
-                color: #fff9f2;
-            }
-        }
-        .youtube {
-            background-image: url(../img/nav/youtube.png);
-        }
-        .twitter {
-            background-image: url(../img/nav/twitter.png);
-        }
-        .linkedin {
-            background-image: url(../img/nav/linkedin.png);
-        }
-        .facebook {
-            background-image: url(../img/nav/facebook.png);
-        }
+        padding: 0 1em 2em;
     }
 }
 
 @media only screen and (min-width:1000px) {
-    // Big Styles
-    #topnav {
-        .logo {
-            float: left;
-            .menuButton {
-                // Big style
-                display: none;
-            }
-            .mc {
-                // Big style
-                background-image: url(../img/nav/mc.png);
-                width: 36px;
-                height: 36px;
-                position: relative;
-                top: 0.4em;
-            }
-        }
-        .menu {
-            padding: 0;
-            background-color: transparent;
-        }
-        .pages {
-            float: right;
-            li {
-                display: inline;
-                position: relative;
-                top: -6px;
-                margin-left: 20px;
-                padding: 0;
-                &:first-child {
-                    margin-left: 0;
-                }
-            }
-        }
-        .more {
-            float: right;
-        }
-        .sister-sites {
-            float: left;
-            margin: 0 12px 0 0;
-        }
-        .social {
+    #contactDiv {
+        .columns {
             float: left;
         }
     }
@@ -320,14 +382,36 @@ $nav-text: darken($nav-text-hover, 20%);
 }
 
 
-// ============================
-// Homepage 
-// ===============================
+/* ============================
+Homepage 
+=============================== */
 
 .home {
     color: #eee;
     background-color: transparent;
-    font-family: $lato-light;
+    font-family: $latolight;
+
+
+    .logo {
+        width: 300px;
+        height: 56px;
+        margin: -24px -150px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+    }
+
+    .coming-soon {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        text-shadow: 0px 0px 2px #222;
+        /* Small Styles */
+        font-size: 1.5em;
+        margin-top: 60px;
+    }
 
     .copyright {
         position: absolute;
@@ -341,65 +425,7 @@ $nav-text: darken($nav-text-hover, 20%);
     }
 }
 
-.block {
-    // aka .panel
-    width: 100%;
-    max-width: 590px;
-    margin: 15px auto;
-    // Small style
-    padding: 45px 0px;
-    h1,h2 {
-        // Small style
-        padding: 0 20px;    
-    }
 
-    &.orange {
-        background-color: $orange;
-        color: $dark-gray;
-        h1 {
-            color: white;
-            font-family: $lato-light;
-        }
-        h2 {
-            color: $dark-gray;
-            font-family: $lato-light;
-        }
-    }
-}
-@media only screen and (min-width:640px) {
-    // Big sizes
-    .block {
-        padding: 45px;
-        h1,h2 {
-            padding: 0 20px;
-        }
-    }
-}
-
-.center {
-    margin-left: auto;
-    margin-right: auto;
-}
-.icon {
-    display: block;
-    width: 95px;
-    height: 95px;
-    background-size: contain;
-    &.idea {
-        background-image: url(../img/icon-idea.png);
-    }
-}
-
-// Homepage Logo
-    // Small
-    .logo {
-        width: 80%;
-        height: auto;
-        margin: 40px auto 20px auto;
-        img {
-            width: 100%;
-        }
-    }
 
 @media only screen and (min-width:640px) {
     html.home {
@@ -410,8 +436,13 @@ $nav-text: darken($nav-text-hover, 20%);
             width: 600px;
             max-width: none;
             height: 112px;
-            margin: 120px auto 70px auto;
+            margin: -45px -300px;
         }
+        .coming-soon {
+            font-size: 2.5em;
+            margin-top: 120px;
+        }
+
     }
 }
 
@@ -423,12 +454,15 @@ $nav-text: darken($nav-text-hover, 20%);
         .logo {
             width: 928px;
             height: 173px;
-            margin: 170px auto 80px auto;
+            margin: -72px -464px;
+        }
+        .coming-soon {
+            margin-top: 160px;
+            font-size: 3.5em;
         }
 
     }
 }
-
 
 
 

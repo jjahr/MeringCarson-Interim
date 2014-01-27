@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+	<meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>MeringCarson</title>
+
+  <link rel="stylesheet" href="css/normalize.css" />
+  
+  <link rel="stylesheet" href="css/app.css" />
+  
+
+  <script src="js/vendor/custom.modernizr.js"></script>
+
+</head>
+<body>
+
+	<div id="container">
+		<div class="row">
+			<div class="large-6 small-6 columns mc">
+				<div class="overlay" style="background:black;"></div>
+				<a href="http://www.meringcarson.com/?utm_campaign=Landing%20Page&utm_medium=landingpage&utm_source=landingpage" alt="MeringCarson" onclick="_gaq.push(['_trackEvent', 'Landing Page', 'Outbound', 'MeringCarson']);"></a>
+			</div>
+			<div class="large-6 small-6 columns emcee">
+				<div class="overlay" style="background:white;"></div>
+				<a href="http://www.designemcee.com/?utm_campaign=Landing%20Page&utm_medium=landingpage&utm_source=landingpage" alt="Emcee Design" onclick="_gaq.push(['_trackEvent', 'Landing Page', 'Outbound', 'Emcee Design']);"></a>
+			</div>
+			<div class="plus"></div>
+		</div>
+	</div>
+
+  <script>
+  document.write('<script src=' +
+  ('__proto__' in {} ? 'js/vendor/zepto' : 'js/vendor/jquery') +
+  '.js><\/script>')
+  </script>
+
+  <script src="js/vendor/jquery.js"></script>
+  
+  <script src="js/foundation/foundation.js"></script>
+	
+	<script src="js/foundation/foundation.alerts.js"></script>
+	
+	<script src="js/foundation/foundation.clearing.js"></script>
+	
+	<script src="js/foundation/foundation.cookie.js"></script>
+	
+	
+<!--	<script src="js/app.js"></script>-->
+	
+	
+<!--	<script src="js/foundation/foundation.dropdown.js"></script>-->
+	
+<!--	<script src="js/foundation/foundation.forms.js"></script>-->
+	
+<!--	<script src="js/foundation/foundation.joyride.js"></script>-->
+	
+<!--	<script src="js/foundation/foundation.magellan.js"></script>-->
+	
+<!--	<script src="js/foundation/foundation.orbit.js"></script>-->
+	
+<!--	<script src="js/foundation/foundation.placeholder.js"></script>-->
+	
+<!--	<script src="js/foundation/foundation.reveal.js"></script>-->
+	
+<!--	<script src="js/foundation/foundation.section.js"></script>-->
+	
+<!--	<script src="js/foundation/foundation.tooltips.js"></script>-->
+	
+<!--	<script src="js/foundation/foundation.topbar.js"></script>-->
+  
+  <script>
+    $(document).foundation();
+    
+    $(function() {
+    	console.log("jquery");
+    	var op1 = 0;
+    	var op2 = 0.15;
+    	
+    	$('.no-touch .mc a').hover(function(e) {
+    		plus(1);
+			console.log(".mc a hover: on")
+			$(this).closest(".mc").find(".overlay").css("opacity", op2);
+    	}, function(e) {
+    		plus(0);
+			console.log(".mc a hover: off")
+			$(this).closest(".mc").find(".overlay").css("opacity", op1);
+    	});
+    	$('.no-touch .emcee a').hover(function(e) {
+    		plus(-1);
+			console.log(".emcee a hover: on")
+			$(this).closest(".emcee").find(".overlay").css("opacity", op2);
+    	}, function(e) {
+    		plus(0);
+			console.log(".emcee a hover: off")
+			$(this).closest(".emcee").find(".overlay").css("opacity", op1);
+    	});
+    	
+    	function plus(x) {
+    		// Rotate plus by x * 90.
+    		var x = 90 * x;
+    		x = 'rotate(' + x + 'deg)';
+    		$('.plus').css({
+    			'transform': x,
+    			'-ms-transform': x, 
+    			'-webkit-transform': x,
+    			'-o-transform': x,
+    			'-moz-transform': x
+    		});
+    		console.log("hover: " + x);
+    		
+    	}
+    	
+    	function randRange(min, max) {
+    		// Returns an integer between min and max
+    		return Math.round( Math.random()*(max-min) ) + min;
+    	}
+    });
+    
+    var _gaq=[['_setAccount','UA-9707382-1'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+
+  </script>
+</body>
+</html>
