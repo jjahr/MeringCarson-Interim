@@ -72,41 +72,42 @@ if( !$ROOT) {
             </ul>
             <div class="menu">
                 <ul class="pages">
-                    <li><a href="<?php echo $ROOT ?>#" onClick="_gaq.push(['_trackEvent', 'Header', 'Home (Text Link)', '']);" class="
+                    <li class="
                         <?php
                             if( $PAGE_TITLE == "Home" ) {
                                 echo( ' active' );
                             }
                         ?>
-                    ">Home</a></li>
-                    <li class="contactDiv"><a href="
+                    "><a href="<?php echo $ROOT ?>#" onClick="_gaq.push(['_trackEvent', 'Header', 'Home (Text Link)', '']);" class="">Home</a></li>
+                    <li class="contactDiv 
+                        <?php
+                            if( $PAGE_TITLE == "Contact" ) {
+                                echo( ' active' );
+                            }
+                        ?>
+                    "><a href="
                         <?php
                             if( $PAGE_TITLE == "Contact" ) {
                                 echo( '#' );
                             } else {
                                 echo( 'contact');
                             }
-                        ?>" class=" 
-                        <?php
-                            if( $PAGE_TITLE == "Contact" ) {
-                                echo( ' active' );
-                            }
-                        ?>
-                    ">Contact</a></li>
-                    <li><a href="careers" onClick="trackOutboundLink(this,'Header','Careers'); return false;" class="
+                        ?>" class="">Contact</a></li>
+                    <li class="careersDiv 
                         <?php
                             if( $PAGE_TITLE == "Careers" ) {
                                 echo( ' active' );
                             }
                         ?>
+                    "><a href="careers" onClick="trackOutboundLink(this,'Header','Careers'); return false;" class="
                     ">Careers</a></li>
                 </ul>
                 <div class="more">
                     <ul class="sister-sites">
                         <li><a href="http://www.designemcee.com" onClick="trackOutboundLink(this,'Header','Emcee Design'); return false;" target="_blank" class="emcee img" alt="Emcee Design"></a></li>
+                        <li><a href="http://move.meringcarson.com" onClick="trackOutboundLink(this,'Header','Blog'); return false;" class="blog img" alt="MeringCarson Blog"><span>Blog</span></a></li>
                     </ul>
                     <ul class="social">
-                        <li><a href="http://move.meringcarson.com" onClick="trackOutboundLink(this,'Header','Blog'); return false;" class="blog img" alt="MeringCarson Blog"><span>Blog</span></a></li>
                         <li><a href="http://www.youtube.com/meringcarson" onClick="trackOutboundLink(this,'Header','Youtube'); return false;" target="_blank" class="youtube img" alt="MeringCarson on Youtube"></a></li>
                         <li><a href="http://www.twitter.com/meringcarson" onClick="trackOutboundLink(this,'Header','Twitter'); return false;" target="_blank" class="twitter img" alt="Follow MeringCarson on Twitter"></a></li>
                         <li><a href="http://www.linkedin.com/company/meringcarson" onClick="trackOutboundLink(this,'Header','Linkedin'); return false;" target="_blank" class="linkedin img" alt="MeringCarson on Linkedin"></a></li>

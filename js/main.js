@@ -26,6 +26,14 @@ $(function(){
 		// 	}
 		// });
 		// console.log("topnav closure finished.");
+		$('body').addClass('navIsHidden');
+		$('#topnav .menuButton').click(function(el) {
+			if( $('body').hasClass('navIsActive') ) {
+				$('body').removeClass('navIsActive').addClass('navIsHidden');
+			} else {
+				$('body').removeClass('navIsHidden').addClass('navIsActive');
+			}
+		})
 	}();
 
 	// console.log("End of global.js closure reached.");    
