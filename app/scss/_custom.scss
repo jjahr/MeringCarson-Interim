@@ -1,0 +1,773 @@
+// @import "compass/utilities/color";
+// @import "compass/css3/transition";
+
+/* =============================
+Page Structure
+================================ */
+
+$nav-background: #3c3d40;
+$nav-text-hover: #fff9f2;
+$nav-text: darken($nav-text-hover, 20%);
+$nav-height: 50px;
+$navmenu-height: 300px;
+
+html,body {
+    margin:0;
+    padding:0;
+    min-height: 99%;
+    background-color: transparent;
+}
+html {
+    position: relative;
+    min-width: 320px;
+    /* Small Styles */
+    min-height: 360px;
+}
+
+#container {
+    width: 100%;
+    margin-top: $nav-height; // Keep this, .navisactive uses margin-top.
+}
+
+
+/* ==========================
+Typography
+============================= */
+
+html, body {
+    font-family: $lato;
+    font-size: 1.07em;
+    line-height: 1.4em;
+}
+h1,h2,h3,h4,h5,em {
+    font-family: $lato-light;
+    font-weight: normal;
+    line-height: 1.1em;
+    margin-bottom: 0;
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+}
+h1, .h1 {
+    // Subpages
+    font-size: 2.7em;
+    font-family: $lato;
+    position: relative;
+    left: -0.1em;
+    letter-spacing: -0.02em;
+}
+
+h2, .h2 {
+    font-size: 1.8em;
+    line-height: 1.1em;
+    letter-spacing: 0.01em;
+}
+
+h3, .h3 {
+    font-size: 1.05em;
+    line-height: 1.2em;
+}
+
+a {
+    color: $orange;
+    text-decoration: none;
+    &:hover {
+        color: darken($orange, 10%);
+        text-decoration: underline;
+    }
+    &.nounderline {
+        text-decoration: none !important;
+        &:hover {
+            text-decoration: none !important;
+        }
+    }
+}
+
+.white {
+    color: #fff;
+}
+a.white:hover {
+    color: #fff;
+}
+
+.bold {
+    font-family: $lato-bold;
+}
+
+ul.nobullet {
+    padding: 0;
+    margin: 0;
+    li {
+        list-style: none;
+        list-style-type: none;
+    }
+}
+
+hr {
+    height:1px; 
+    color:#555; 
+    border:none;
+    border-bottom:1px solid;
+    margin: 2.2em 0;
+    &.moremargin {
+        margin: 3em 0;
+    }
+}
+
+em {
+    font-family: $lato-bold;
+    font-style: normal;
+}
+
+p.vcard {
+    margin:0;
+}
+
+.left {
+    text-align: left;
+}
+
+
+/* ==========================
+Buttons
+============================= */
+$btn-orange-background: #b06b3f;
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    margin: 0.2em 1em;
+    padding: 0.4em 1.2em 0.5em;
+    font-family: $lato-light;
+    color: white;
+    background-color: $btn-orange-background;
+    &:hover {
+        background-color: darken($btn-orange-background, 6%);
+        text-decoration: none;
+        color: white;
+    }
+    &.lesspadding {
+        padding-left: 0.8em;
+        padding-right: 0.8em;
+    }
+    &.big {
+        font-size: 1.2em;
+    }
+    &.expand {
+        display: block;
+        width: auto;
+        margin: 0.4em 0em;
+        text-align: center;
+    }
+}
+
+
+/* ==========================
+Grid, Helpers, etc.
+============================= */
+
+// .hide-for-small {
+//     display: none !important;
+// }
+// .show-for-small {
+//     display: inherit !important;
+// }
+// @media only screen and (min-width:640px) {
+//     .hide-for-small {
+//         display: inherit !important;
+//     }
+//     .show-for-small {
+//         display: none !important;
+//     }
+// }
+
+/* ==========================
+Navigation
+============================= */
+.js #topnav {
+    // Only make topnav fixed when we have javascript.
+    // Otherwise mega annoying to have it open and fixed on screen all the time.
+    position: fixed;
+    top: 0px;
+}
+
+#topnav {
+    z-index: 1;
+    width: 100%;
+    height: $nav-height;
+    background-color: $nav-background; //rgba(0,0,0,0.6);
+    margin: 0;
+    padding: 0;
+    font-family: $lato;
+    letter-spacing: 0.02em;
+    font-size: 0.9em;
+    line-height: 1.05em;
+
+    // logo, pages, sister-sites, social
+    ul {
+        position: relative;
+        list-style-type: none;
+        text-align: left;
+        width: auto;
+        height: auto;
+        margin: 0;
+        padding: 0;
+        li {
+            display: inline;
+            a {
+                position: relative;
+                display: inline-block;
+                background-size: contain;
+                color:  #bfbbb2;
+                text-decoration: none;
+                text-transform: uppercase;
+
+                &:hover { 
+                    color:  white; 
+                    border-bottom: none;
+                }
+                &.img {
+                    opacity: 0.6;
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+            }
+            &.active {
+                background-color: darken($nav-background, 10%);
+                a {
+                    color: $orange;
+                    font-family: $lato-black;
+                }
+            }
+            img {
+                position:absolute; 
+                top: -18px;
+                left: 0px;
+            }
+        }
+    }
+
+    .logo {
+        display: block;
+        // Small style
+        float: none;
+        margin: 0 1em 0 1.5em;
+
+        .menuButton {
+            // Small style
+            background-image: url(../img/nav/menu.png);
+            width: 33px;
+            height: 33px;
+            position: relative;
+            top: 0.5em;
+            margin-right: 0.5em;
+        }
+        .mc {
+            // Small style
+            background-image: url(../img/nav/meringcarson.png);
+            background-repeat: no-repeat;
+            width: 182px;
+            height: 33px;
+            position: relative;
+            top: 0.8em;
+        }
+
+    }
+    .pages {
+        display: block;
+        margin: 0;
+        position: relative;
+        top: 1.1em;
+        // Small style
+        float: none;
+        li {
+            // Small
+            display: block;
+            padding: 0;
+
+            a {
+                // Small
+                padding: 0.8em 2.8em;                
+            }
+        }
+    }
+    .menu {
+        // Container for .pages and .more
+        // Small style
+        display: block; // hide it with javascript, man.
+        background-color: $nav-background; //rgba(0,0,0,0.6);
+        padding: 0 0 1.1em;
+        overflow: hidden;
+        transition-property: height;
+        transition-duration: 0.3s;
+        transition-timing-function: ease;
+        -webkit-transition-property: height;
+        -webkit-transition-duration: 0.3s;
+        -webkit-transition-timing-function: ease;
+
+
+    }
+    .more {
+        // Container for right-aligned elements.
+        float: none;
+    }
+    .sister-sites {
+        margin: 0 0.5em 0 0;
+        // Small style
+        float: none;
+        li {
+            // Small
+            display: block;
+        }
+        .emcee {
+            background-image: url(../img/nav/emcee.png);
+            width: 112px;
+            height: 30px;
+            top: 0.6em;
+            // Small
+            margin: 1.4em 0 0 2.6em;
+        }
+        .blog {
+            background-size: 28px 28px;
+            background-position: left center;
+            background-repeat: no-repeat;
+            width: auto;
+            height: 28px;
+            // Small
+            margin: 1.2em 0 0 2.8em;
+            span {
+                // Text is inside this
+                position: relative;
+                top: 0.35em;
+                padding-left: 32px;
+                color: #fff9f2;
+            }
+        }
+    }
+    .social {
+        // Small
+        float: none;
+        margin: 0.2em 0 0 2.3em;
+        li {
+            display: inline-block;
+            a {
+                display: block;
+                width: 28px;
+                height: 28px;
+                margin: 0.7em 0 0 0.4em;
+                float: none;
+                background-repeat: no-repeat;
+                background-position: center center;
+            }
+        }
+    }
+}
+
+.socialicon {
+    display: inline-block;
+    min-width: 28px;
+    min-height: 28px;
+    margin: 0.3em 0;
+    padding: 1px 0 0 34px;
+    background-position: left center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: inherit;
+    text-decoration: none;
+    &:hover {
+        color: inherit;
+        text-decoration: none;
+    }
+}
+.blog {
+    background-image: url(../img/nav/rss.png);    
+}
+.youtube {
+    background-image: url(../img/nav/youtube.png);
+}
+.twitter {
+    background-image: url(../img/nav/twitter.png);
+}
+.linkedin {
+    background-image: url(../img/nav/linkedin.png);
+}
+.facebook {
+    background-image: url(../img/nav/facebook.png);
+}
+
+
+body.navIsHidden {
+    // Add this class to hide the nav.  Javascript adds this class.
+    // If no javascript, then menu is still accessible.
+    #topnav {
+        .menu {
+            height: 0;
+            // display: none;
+        }
+    }
+}
+body.navIsActive {
+    // Add this class to <body> whenever mobile nav dropdown is showing/visible/active/open.
+    #topnav {
+        .menu {
+            height: $navmenu-height;
+            display: block;
+        }
+        .logo {
+            .menuButton {
+                opacity: 1;
+            }
+            .mc {
+                // opacity: 1;
+            }
+        }
+    }
+    #container {
+        // margin-top: ($nav-height + $navmenu-height);
+    }
+}
+
+@media only screen and (min-width:640px) {
+    #topnav {
+        .logo {
+            margin: 0 1em 0 3em;
+        }
+    }
+}
+
+@media only screen and (min-width:1000px) {
+    // Big Styles
+    body.navIsHidden, body.navIsActive {
+        #topnav {
+            .menu {
+                display: block;
+                height: $navmenu-height;
+            }
+        }
+    }
+    // Big Styles
+    #topnav {
+        .logo {
+            float: left;
+
+            .menuButton {
+                // Big style
+                display: none;
+            }
+            .mc {
+                // Big style
+                background-image: url(../img/nav/mc.png);
+                width: 33px;
+                height: 33px;
+                position: relative;
+                top: 0.5em;
+            }
+        }
+        .menu {
+            padding: 0;
+            background-color: transparent;
+        }
+        .pages {
+            float: none;
+            margin: 0;
+            position:relative;
+            top: 1.35em;
+            li {
+                display: inline;
+                position: relative;
+                top: -6px;
+                margin-left: 20px;
+                padding: 0;
+                &:first-child {
+                    margin-left: 0;
+                }
+
+                a {
+                    padding: 0;
+                }
+            }
+        }
+        ul {
+            li.active {
+                background-color: transparent;
+            }
+        }
+        .more {
+            float: right;
+            position: relative;
+            top: -1.1em;
+        }
+        .sister-sites {
+            float: left;
+            margin: 0 12px 0 0;
+            li {
+                display: inline;
+            }
+            .emcee {
+                margin: 0 1.6em 0 0;
+            }
+            .blog {
+                margin: 0 0.8em 0 0;
+                position: relative;
+                top: -0.3em;
+            }
+        }
+        .social {
+            float: left;
+            margin: 0 3em 0 0;
+        }
+    }
+}
+
+.container {
+    max-width: 640px;
+    /* Small style */
+    width: 100%;
+}
+
+#footer {
+    margin: 2em 0 4em;
+    font-size: 0.9em;
+    color: #999;
+    width: 100%;
+    text-align: center;
+}
+
+.block {
+    // aka .panel
+    width: 100%;
+    max-width: 640px;
+    margin: 6em auto 3em;
+    // Small style
+    padding: 45px 15px;
+    h1,h2 {
+        // Small style
+        padding: 0;
+    }
+    hr {
+        border-color: $dark-gray;
+        opacity: 0.3;
+    }
+
+    &.orange {
+        background-color: $orange;
+        color: $dark-gray;
+        h1 {
+            color: white;
+            font-family: $lato-light;
+        }
+        h2 {
+            color: lighten($dark-gray,1.5%);
+            font-family: $lato-light;
+        }
+    }
+    &.white {
+        background-color: #fff;
+        color: lighten($dark-gray,10%);
+        h1,h2,h3 {
+            color: $orange;
+            &.subheader {
+                color: lighten($dark-gray,10%);
+            }
+        }
+    }
+}
+@media only screen and (min-width:640px) {
+    // Big sizes
+    .block {
+        padding: 45px 40px;
+        max-width: 640px;  // Smaller max-width because now we have padding.
+    }
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+.icon {
+    display: block;
+    width: 95px;
+    height: 95px;
+    background-size: contain;
+    &.idea {
+        background-image: url(../img/icon-idea.png);
+    }
+    &.contact {
+        background-image: url(../img/icon-contact.png);
+    }
+}
+
+
+// ===============================
+// Homepage 
+// ===============================
+
+html.home {
+    background-image: url(../img/bkg.jpg);
+    background-position: center 50px; // align with bottom of topnav;
+    background-repeat: repeat;
+    background-color: #333;
+    background-size: 700px;
+    color: #eee;
+    background-color: transparent;
+
+    h1, .h1 {
+        position: relative;
+        left: -0.1em;
+        // Small
+        font-size: 2.1em;
+    }
+    h2, .h2 {
+        line-height: 1.3em;
+        // Small
+        font-size: 1.5em;
+    }
+
+
+    .logo {
+        // Small
+        display:none;
+        width: 80%;
+        height: auto;
+        margin: 40px auto 20px auto;
+        img {
+            width: 100%;
+        }
+    }
+}
+
+
+@media only screen and (min-width:640px) {
+    html.home {
+        background-size: 1340px;
+        min-height: 620px;
+        h1, .h1 {
+            font-size: 2.8em;
+        }
+        h2, .h2 {
+            font-size: 1.6em;
+        }
+        .logo {
+            display: block;
+            width: 600px;
+            max-width: none;
+            height: 112px;
+            margin: 120px auto 70px auto;
+        }
+    }
+}
+
+@media only screen and (min-width:1000px) {
+    html.home {
+        background-size: 2034px;
+        min-height: 750px;
+
+        .logo {
+            width: 928px;
+            height: 173px;
+            margin: 170px auto 80px auto;
+        }
+
+    }
+}
+
+/* ============================
+All Sub Pages
+=============================== */
+
+html {
+    // Big background image style
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: 1200px;
+}
+
+@media only screen and (min-width:1200px) {
+    html {
+        // Big background image style
+        background-size: cover;
+    }
+}
+
+.block img.header {
+    // Small
+    margin: -45px -15px 0;
+    max-width: 112%;
+}
+@media only screen and (min-width:640px) {
+    .block img.header {
+        // Big
+        margin: -45px -40px 0;
+        max-width: 640px;
+    }
+}
+
+/* ============================
+Contact Page
+=============================== */
+
+html.contact {
+    background-color: #939296;
+    background-image: url(../img/bkg-contact.jpg);
+
+    .block.orange {
+        font-family: $lato-light;
+        color: lighten($orange,40%);
+    }
+
+    h1, .h1 {
+        // Small
+        font-size: 2.3em;
+    }
+
+    #footer {
+        color: darken(#787980,10%);
+    }
+}
+.contact-big {
+    display: block; 
+    font-size: 2.6em; 
+    letter-spacing: 0.3em; 
+    margin: 0.5em 0 0.4em;
+    position: relative;
+    left: -0.1em;
+    .gray {
+        color: $light-gray;
+    }
+}
+
+@media only screen and (min-width:640px) {
+    html.contact {
+        h1, .h1 {
+            font-size: 3.3em;
+        }    
+    }
+}
+
+/* ============================
+Careers Page
+=============================== */
+
+html.careers {
+    background-color: #383A37;
+    background-image: url(../img/bkg-careers.jpg);
+    background-size: 1400px auto;
+    background-position: center 50px;
+    
+    #footer {
+        color: lighten($dark-gray, 15%);
+    }
+}
+@media only screen and (min-width:1000px) {
+    html.careers {
+        background-size: 2000px auto;
+        background-position: center top;
+    }
+}
+@media only screen and (min-width:2000px) {
+    html.careers {
+        // Big background image style
+        background-size: cover;
+    }
+}
