@@ -9,7 +9,8 @@ $nav-background: #3c3d40;
 $nav-text-hover: #fff9f2;
 $nav-text: darken($nav-text-hover, 20%);
 $nav-height: 50px;
-$navmenu-height: 300px;
+// $navmenu-height: 300px; // with blog
+$navmenu-height: 246px; // without blog
 
 html,body {
     margin:0;
@@ -137,18 +138,26 @@ $btn-orange-background: #b06b3f;
     display: inline-block;
     text-decoration: none;
     margin: 0.2em 1em;
-    padding: 0.4em 1.2em 0.5em;
     font-family: $lato-light;
     color: white;
     background-color: $btn-orange-background;
+    // Small
+    padding: 0.6em 1.2em 0.7em;
+
     &:hover {
         background-color: darken($btn-orange-background, 6%);
         text-decoration: none;
         color: white;
     }
     &.lesspadding {
-        padding-left: 0.8em;
-        padding-right: 0.8em;
+        $padding: 0.8em;
+        padding-left: $padding;
+        padding-right: $padding;
+    }
+    &.morepadding {
+        $padding: 3em;
+        padding-left: $padding;
+        padding-right: $padding;
     }
     &.big {
         font-size: 1.2em;
@@ -161,6 +170,14 @@ $btn-orange-background: #b06b3f;
     }
 }
 
+@media only screen and (min-width:640px) {
+    // Big
+    .btn {
+        $padding: 0.4em;
+        padding-top: $padding;
+        padding-bottom: $padding;
+    }
+}
 
 /* ==========================
 Grid, Helpers, etc.
@@ -288,7 +305,7 @@ Navigation
 
             a {
                 // Small
-                padding: 0.8em 2.8em;                
+                padding: 0.8em 1.4em;                
             }
         }
     }
@@ -326,7 +343,7 @@ Navigation
             height: 30px;
             top: 0.6em;
             // Small
-            margin: 1.4em 0 0 2.6em;
+            margin: 1.2em 0 0.2em 1.3em;  // Without blog
         }
         .blog {
             background-size: 28px 28px;
@@ -335,7 +352,7 @@ Navigation
             width: auto;
             height: 28px;
             // Small
-            margin: 1.2em 0 0 2.8em;
+            margin: 1.2em 0 0 1.4em;
             span {
                 // Text is inside this
                 position: relative;
@@ -348,7 +365,7 @@ Navigation
     .social {
         // Small
         float: none;
-        margin: 0.2em 0 0 2.3em;
+        margin: 0.2em 0 0 1em;
         li {
             display: inline-block;
             a {
@@ -433,6 +450,23 @@ body.navIsActive {
         .logo {
             margin: 0 1em 0 3em;
         }
+        // More padding to mobile dropdown menu
+        .pages {
+            li a {
+                padding-left: 2.8em;
+            }
+        }
+        .sister-sites {
+            .emcee {
+                margin-left: 2.65em;
+            }
+            .blog {
+                margin-left: 2.8em;
+            }
+        }
+        .social {
+            margin-left: 2.3em;
+        }
     }
 }
 
@@ -505,7 +539,8 @@ body.navIsActive {
                 display: inline;
             }
             .emcee {
-                margin: 0 1.6em 0 0;
+                // margin: 0 1.6em 0 0;  // with blog
+                margin: 0 0.6em 0 0;  // without blog
             }
             .blog {
                 margin: 0 0.8em 0 0;
@@ -538,9 +573,9 @@ body.navIsActive {
     // aka .panel
     width: 100%;
     max-width: 640px;
-    margin: 6em auto 3em;
     // Small style
     padding: 45px 15px;
+    margin: 0 auto 3em;
     h1,h2 {
         // Small style
         padding: 0;
@@ -578,6 +613,7 @@ body.navIsActive {
     .block {
         padding: 45px 40px;
         max-width: 640px;  // Smaller max-width because now we have padding.
+        margin: 6em auto 3em;
     }
 }
 
@@ -690,16 +726,23 @@ html {
     }
 }
 
-.block img.header {
+.block .header {
     // Small
     margin: -45px -15px 0;
-    max-width: 112%;
+    overflow: hidden;
+    img {
+        $width: 106%;
+        width: $width;
+        max-width: $width;
+    }
 }
 @media only screen and (min-width:640px) {
-    .block img.header {
+    .block .header {
         // Big
         margin: -45px -40px 0;
-        max-width: 640px;
+        img {
+            max-width: 640px;
+        }
     }
 }
 

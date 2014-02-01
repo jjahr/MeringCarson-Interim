@@ -61,10 +61,6 @@ if( !$ROOT) {
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <!-- build:css css/font-awesome.min.css -->
-        <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
-        <!-- endbuild -->
-
         <link rel="stylesheet" href="<?php echo $ROOT ?>css/app.css">
 
         <!-- build:js js/vendor/modernizr.js -->
@@ -87,20 +83,20 @@ if( !$ROOT) {
                 <ul class="pages">
                     <li class="
                         <?php
-                            if( $PAGE_TITLE == "Home" ) {
+                            if( $PAGE_CLASS == "home" ) {
                                 echo( ' active' );
                             }
                         ?>
                     "><a href="<?php echo $ROOT ?>#" onClick="_gaq.push(['_trackEvent', 'Header', 'Home (Text Link)', '']);" class="">Home</a></li>
                     <li class="contactDiv 
                         <?php
-                            if( $PAGE_TITLE == "Contact" ) {
+                            if( $PAGE_CLASS == "contact" ) {
                                 echo( ' active' );
                             }
                         ?>
                     "><a href="
                         <?php
-                            if( $PAGE_TITLE == "Contact" ) {
+                            if( $PAGE_CLASS == "contact" ) {
                                 echo( '#' );
                             } else {
                                 echo( $ROOT . 'contact');
@@ -108,13 +104,13 @@ if( !$ROOT) {
                         ?>" class="">Contact</a></li>
                     <li class="careersDiv 
                         <?php
-                            if( $PAGE_TITLE == "Careers" ) {
+                            if( $PAGE_CLASS == "careers" ) {
                                 echo( ' active' );
                             }
                         ?>
                     "><a href="
                         <?php
-                            if( $PAGE_TITLE == "Careers" ) {
+                            if( $PAGE_CLASS == "careers" ) {
                                 echo( '#' );
                             } else {
                                 echo( $ROOT . 'careers');
@@ -125,7 +121,7 @@ if( !$ROOT) {
                 <div class="more">
                     <ul class="sister-sites">
                         <li><a href="http://www.designemcee.com" onClick="trackOutboundLink(this,'Header','Emcee Design'); return false;" target="_blank" class="emcee img" alt="Emcee Design"></a></li>
-                        <li><a href="http://move.meringcarson.com" onClick="trackOutboundLink(this,'Header','Blog'); return false;" class="blog img" alt="MeringCarson Blog"><span>Blog</span></a></li>
+                        <?php //<li><a href="http://move.meringcarson.com" onClick="trackOutboundLink(this,'Header','Blog'); return false;" class="blog img" alt="MeringCarson Blog"><span>Blog</span></a></li> ?>
                     </ul>
                     <ul class="social">
                         <li><a href="http://www.youtube.com/meringcarson" onClick="trackOutboundLink(this,'Header','Youtube'); return false;" target="_blank" class="youtube img" alt="MeringCarson on Youtube"></a></li>

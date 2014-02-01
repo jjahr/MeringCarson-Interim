@@ -8,7 +8,9 @@
 <?php include($ROOT . "php/header.php") ?>
 
     <div class="block white">
-        <img class="header" src="<?php echo $ROOT ?>img/header-careers.jpg" alt="MeringCarson Careers">
+        <div class="header">
+            <img src="<?php echo $ROOT ?>img/header-careers.jpg" alt="MeringCarson Careers">
+        </div>
 		<div class="row">
             <div class="large-12 columns">
                 <h1 style="margin-top:0.7em;">Careers<span style="letter-spacing:-0.06em;"></span></h1>

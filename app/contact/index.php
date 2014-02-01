@@ -22,8 +22,8 @@
                     </div>
                 </div>
 
-                <a class="h3 white bold nounderline fn org url" href="http://www.meringcarson.com">meringcarson.com</a><br>
-                <a class="h3 white bold nounderline fn org url" href="http://www.designemcee.com">designemcee.com</a>
+                <?php // <a class="h3 white bold nounderline fn org url" href="http://www.meringcarson.com">meringcarson.com</a><br> ?>
+                <?php // <a class="h3 white bold nounderline fn org url" href="http://www.designemcee.com">designemcee.com</a> ?>
                 <hr class="moremargin">
             </div>            
         </div>
@@ -56,7 +56,7 @@
                 <hr>
             </div>
             <div class="large-6 columns left">
-                <a href="http://move.meringcarson.com" class="socialicon blog">Blog Name</a><br>
+                <?php // <a href="http://move.meringcarson.com" class="socialicon blog">Blog Name</a><br> ?>
                 <a href="http://twitter.com/meringcarson" class="socialicon twitter">@meringcarson</a>
             </div>
             <div class="large-6 columns left">

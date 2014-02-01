@@ -1570,10 +1570,10 @@ Buttons
   display: inline-block;
   text-decoration: none;
   margin: 0.2em 1em;
-  padding: 0.4em 1.2em 0.5em;
   font-family: "latolight", Helvetica, Arial, sans-serif;
   color: white;
-  background-color: #b06b3f; }
+  background-color: #b06b3f;
+  padding: 0.6em 1.2em 0.7em; }
   .btn:hover {
     background-color: #995d37;
     text-decoration: none;
@@ -1581,6 +1581,9 @@ Buttons
   .btn.lesspadding {
     padding-left: 0.8em;
     padding-right: 0.8em; }
+  .btn.morepadding {
+    padding-left: 3em;
+    padding-right: 3em; }
   .btn.big {
     font-size: 1.2em; }
   .btn.expand {
@@ -1588,6 +1591,11 @@ Buttons
     width: auto;
     margin: 0.4em 0em;
     text-align: center; }
+
+@media only screen and (min-width: 640px) {
+  .btn {
+    padding-top: 0.4em;
+    padding-bottom: 0.4em; } }
 
 /* ==========================
 Grid, Helpers, etc.
@@ -1671,7 +1679,7 @@ Navigation
       display: block;
       padding: 0; }
       #topnav .pages li a {
-        padding: 0.8em 2.8em; }
+        padding: 0.8em 1.4em; }
   #topnav .menu {
     display: block;
     background-color: #3c3d40;
@@ -1695,14 +1703,14 @@ Navigation
       width: 112px;
       height: 30px;
       top: 0.6em;
-      margin: 1.4em 0 0 2.6em; }
+      margin: 1.2em 0 0.2em 1.3em; }
     #topnav .sister-sites .blog {
       background-size: 28px 28px;
       background-position: left center;
       background-repeat: no-repeat;
       width: auto;
       height: 28px;
-      margin: 1.2em 0 0 2.8em; }
+      margin: 1.2em 0 0 1.4em; }
       #topnav .sister-sites .blog span {
         position: relative;
         top: 0.35em;
@@ -1710,7 +1718,7 @@ Navigation
         color: #fff9f2; }
   #topnav .social {
     float: none;
-    margin: 0.2em 0 0 2.3em; }
+    margin: 0.2em 0 0 1em; }
     #topnav .social li {
       display: inline-block; }
       #topnav .social li a {
@@ -1756,19 +1764,27 @@ body.navIsHidden #topnav .menu {
   height: 0; }
 
 body.navIsActive #topnav .menu {
-  height: 300px;
+  height: 246px;
   display: block; }
 body.navIsActive #topnav .logo .menuButton {
   opacity: 1; }
 
 @media only screen and (min-width: 640px) {
   #topnav .logo {
-    margin: 0 1em 0 3em; } }
+    margin: 0 1em 0 3em; }
+  #topnav .pages li a {
+    padding-left: 2.8em; }
+  #topnav .sister-sites .emcee {
+    margin-left: 2.65em; }
+  #topnav .sister-sites .blog {
+    margin-left: 2.8em; }
+  #topnav .social {
+    margin-left: 2.3em; } }
 
 @media only screen and (min-width: 1000px) {
   body.navIsHidden #topnav .menu, body.navIsActive #topnav .menu {
     display: block;
-    height: 300px; }
+    height: 246px; }
   #topnav .logo {
     float: left; }
     #topnav .logo .menuButton {
@@ -1809,7 +1825,7 @@ body.navIsActive #topnav .logo .menuButton {
     #topnav .sister-sites li {
       display: inline; }
     #topnav .sister-sites .emcee {
-      margin: 0 1.6em 0 0; }
+      margin: 0 0.6em 0 0; }
     #topnav .sister-sites .blog {
       margin: 0 0.8em 0 0;
       position: relative;
@@ -1833,8 +1849,8 @@ body.navIsActive #topnav .logo .menuButton {
 .block {
   width: 100%;
   max-width: 640px;
-  margin: 6em auto 3em;
-  padding: 45px 15px; }
+  padding: 45px 15px;
+  margin: 0 auto 3em; }
   .block h1, .block h2 {
     padding: 0; }
   .block hr {
@@ -1860,7 +1876,8 @@ body.navIsActive #topnav .logo .menuButton {
 @media only screen and (min-width: 640px) {
   .block {
     padding: 45px 40px;
-    max-width: 640px; } }
+    max-width: 640px;
+    margin: 6em auto 3em; } }
 
 .center {
   margin-left: auto;
@@ -1935,14 +1952,18 @@ html {
   html {
     background-size: cover; } }
 
-.block img.header {
+.block .header {
   margin: -45px -15px 0;
-  max-width: 112%; }
+  overflow: hidden; }
+  .block .header img {
+    width: 106%;
+    max-width: 106%; }
 
 @media only screen and (min-width: 640px) {
-  .block img.header {
-    margin: -45px -40px 0;
-    max-width: 640px; } }
+  .block .header {
+    margin: -45px -40px 0; }
+    .block .header img {
+      max-width: 640px; } }
 
 /* ============================
 Contact Page
