@@ -71,7 +71,7 @@ $(function(){
 
 // Google Analytics Outbound Links 
 	function trackOutboundLink(link, category, action) { 
-		// console.log("trackOutboundLink: " + category + ", " + action)
+		console.log("trackOutboundLink: " + category + ", " + action)
 		try { 
 			_gaq.push(['_trackEvent', category , action]); 
 		} catch(err){
@@ -93,8 +93,8 @@ $(function(){
 	// Reference:
 	// https://support.google.com/analytics/answer/1136920?hl=en
 
-// console.log("starting ga...");
-  /*
+console.log("starting ga...");
+  
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-9707382-1']);
   _gaq.push(['_setDomainName', 'meringcarson.com']);
@@ -105,5 +105,5 @@ $(function(){
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
-*/
+
 

@@ -1563,6 +1563,30 @@ p.vcard {
 .left {
   text-align: left; }
 
+.kern1 {
+  letter-spacing: 0.05em; }
+
+.kern2 {
+  letter-spacing: 0.1em; }
+
+.kern3 {
+  letter-spacing: 0.15em; }
+
+.kern4 {
+  letter-spacing: 0.2em; }
+
+.kern-1 {
+  letter-spacing: -0.05em; }
+
+.kern-2 {
+  letter-spacing: -0.1em; }
+
+.kern-3 {
+  letter-spacing: -0.15em; }
+
+.kern-4 {
+  letter-spacing: -0.2em; }
+
 /* ==========================
 Buttons
 ============================= */
@@ -1898,7 +1922,7 @@ html.home {
   background-position: center 50px;
   background-repeat: repeat;
   background-color: #333333;
-  background-size: 700px;
+  background-size: 1170px;
   color: #eeeeee;
   background-color: transparent; }
   html.home h1, html.home .h1 {
@@ -1918,7 +1942,7 @@ html.home {
 
 @media only screen and (min-width: 640px) {
   html.home {
-    background-size: 1340px;
+    background-size: 1780px;
     min-height: 620px; }
     html.home h1, html.home .h1 {
       font-size: 2.8em; }
@@ -1933,12 +1957,16 @@ html.home {
 
 @media only screen and (min-width: 1000px) {
   html.home {
-    background-size: 2034px;
+    background-size: 1780px;
     min-height: 750px; }
     html.home .logo {
       width: 928px;
       height: 173px;
       margin: 170px auto 80px auto; } }
+
+@media only screen and (min-width: 1780px) {
+  html.home {
+    background-size: cover; } }
 
 /* ============================
 All Sub Pages

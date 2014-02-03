@@ -15,10 +15,10 @@
                 <h1 style="margin-top:0.7em;">C<span style="letter-spacing:-0.06em;">O</span><span style="letter-spacing:0.06em;">N</span>T<span style="letter-spacing:-0.06em;">A</span>CT US</h1>
                 <div style="margin:3em 0 1.6em;">
                     <div class="show-for-medium-up">
-                        <a href="mailto:info@meringcarson.com" style="" class="btn h3">info@meringcarson.com</a>          
+                        <a href="mailto:info@meringcarson.com" style="" class="btn h3">inf<span class="kern1">o@</span>meringcarso<span class="kern1">n.</span>com</a>          
                     </div>
                     <div class="show-for-small-only">
-                        <a href="mailto:info@meringcarson.com" class="btn h3 expand">info@meringcarson.com</a>          
+                        <a href="mailto:info@meringcarson.com" class="btn h3 expand">inf<span class="kern1">o@</span>meringcarso<span class="kern1">n.</span>com</a>          
                     </div>
                 </div>
 
@@ -34,9 +34,9 @@
                     <span class="contact-big"><span class="gray">[</span>N<span class="gray">]</span></span>
         			<em class="white"><span class="street-address">1700 I Street</span><br>
         			<span class="address-extended">2nd Floor</span><br>
-        			<span class="locality">Sacramento</span>, <span class="state">CA</span> <span class="postal-code">95811</span><br></em>
-					:p <span class="tel">916.441.0571</span><br>
-					:f <span class="fax">916.441.0571</span><br><br>
+        			<span class="locality">Sacramento</span>, <span class="state">CA</span> <span class="postal-code">95<span class="kern-1">81</span>1</span><br></em>
+					:p <span class="tel"><span class="kern-1">9</span>1<span class="kern2">6</span><span class="kern2">.</span>4<span class="kern-3">4</span><span class="kern4">1</span><span class="kern3">.</span><span class="kern-1">0</span>5<span class="kern-2">7</span>1</span><br>
+					:f <span class="fax"><span class="kern-1">9</span>1<span class="kern2">6</span><span class="kern2">.</span>4<span class="kern-3">4</span><span class="kern4">1</span><span class="kern1">.</span><span class="kern1">1</span>3<span class="kern1">7</span>0</span><br><br>
         		</p>
         	</div>
         	<div class="large-6 columns left">
@@ -45,9 +45,9 @@
                     <span class="contact-big"><span class="gray">[</span>S<span class="gray">]</span></span>
         			<em class="white"><span class="street-address">624 Broadway</span><br>
         			<span class="address-extended">Suite 502</span><br>
-        			<span class="locality">San Diego</span>, <span class="state">CA</span> <span class="postal-code">92101</span><br></em>
-					:p <span class="tel">760.635.2100</span><br>
-					:f <span class="fax">760.635.2106</span>
+        			<span class="locality">San Diego</span>, <span class="state">CA</span> <span class="postal-code">9<span class="kern-1">2</span><span class="kern1">1</span><span class="kern-1">0</span>1</span><br></em>
+					:p <span class="tel"><span class="kern-1">7</span>6<span class="kern1">0</span><span class="kern2">.</span>6<span class="kern-1">3</span><span class="kern2">5</span><span class="kern2">.</span><span class="kern-2">2</span><span class="kern2">1</span><span class="kern1">0</span>0</span><br>
+					:f <span class="fax"><span class="kern-1">7</span>6<span class="kern1">0</span><span class="kern2">.</span>6<span class="kern-1">3</span><span class="kern3">5</span><span class="kern3">.</span><span class="kern-2">2</span><span class="kern2">1</span><span class="kern0">0</span>6</span>
         		</p>
         	</div>
         </div>
@@ -57,21 +57,21 @@
             </div>
             <div class="large-6 columns left">
                 <?php // <a href="http://move.meringcarson.com" class="socialicon blog">Blog Name</a><br> ?>
-                <a href="http://twitter.com/meringcarson" class="socialicon twitter">@meringcarson</a>
+                <a href="http://twitter.com/meringcarson" class="socialicon twitter">@MeringCarson</a><br>
+                <a href="http://www.linkedin.com/company/meringcarson" class="socialicon linkedin">/MeringCarson</a><br>
             </div>
             <div class="large-6 columns left">
-                <a href="http://move.meringcarson.com" class="socialicon linkedin">/meringcarson</a><br>
-                <a href="http://move.meringcarson.com" class="socialicon facebook">/MeringCarson</a>
+                <a href="https://www.facebook.com/MeringCarson" class="socialicon facebook">/MeringCarson</a>
             </div>
         </div>
         <div class="row h3 left">
             <div class="large-12 columns">
                 <hr>
                 <div class="show-for-medium-up">
-                    Looking for a job? <a href="<?php echo $ROOT ?>careers" class="btn lesspadding">We're Hiring</a>
+                    Lookin<span class="kern3">g</span> fo<span class="kern3">r</span> <span class="kern3">a</span> <span class="kern-1">j</span>ob? <a href="<?php echo $ROOT ?>careers" class="btn lesspadding">We're Hiring</a>
                 </div>
                 <div class="show-for-small-only">
-                    Looking for a job? <a href="<?php echo $ROOT ?>careers" class="btn expand">We're Hiring</a>
+                    Looking for <span class="kern3">a </span> <span class="kern-1">j</span>ob? <a href="<?php echo $ROOT ?>careers" class="btn expand">We're Hiring</a>
                 </div>
 
             </div>

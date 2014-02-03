@@ -129,6 +129,31 @@ p.vcard {
     text-align: left;
 }
 
+.kern1 {
+    letter-spacing: 0.05em;
+}
+.kern2 {
+    letter-spacing: 0.10em;
+}
+.kern3 {
+    letter-spacing: 0.15em;
+}
+.kern4 {
+    letter-spacing: 0.20em;
+}
+.kern-1 {
+    letter-spacing: -0.05em;
+}
+.kern-2 {
+    letter-spacing: -0.10em;
+}
+.kern-3 {
+    letter-spacing: -0.15em;
+}
+.kern-4 {
+    letter-spacing: -0.20em;
+}
+
 
 /* ==========================
 Buttons
@@ -644,7 +669,9 @@ html.home {
     background-position: center 50px; // align with bottom of topnav;
     background-repeat: repeat;
     background-color: #333;
-    background-size: 700px;
+    // background-size: 700px;
+    // background-size: 612px;
+    background-size: 1170px;
     color: #eee;
     background-color: transparent;
 
@@ -676,7 +703,9 @@ html.home {
 
 @media only screen and (min-width:640px) {
     html.home {
-        background-size: 1340px;
+        // background-size: 1340px;
+        // background-size: 1170px;
+        background-size: 1780px; // Keep grid big to avoid repeating (for Michael).
         min-height: 620px;
         h1, .h1 {
             font-size: 2.8em;
@@ -696,7 +725,8 @@ html.home {
 
 @media only screen and (min-width:1000px) {
     html.home {
-        background-size: 2034px;
+        // background-size: 2034px;
+        background-size: 1780px;
         min-height: 750px;
 
         .logo {
@@ -705,6 +735,12 @@ html.home {
             margin: 170px auto 80px auto;
         }
 
+    }
+}
+
+@media only screen and (min-width:1780px) {
+    html.home {
+        background-size: cover;
     }
 }
 
