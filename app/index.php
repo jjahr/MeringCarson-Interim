@@ -19,11 +19,11 @@
 			<h2 style="margin-top:1.6em;">In short:</h2>
 			<h1 style="margin-top:0em;"><span style="letter-spacing:-0.08em;">W</span>e Mo<span style="letter-spacing:-0.05em;">v</span>e <span style="letter-spacing:0.05em;">P</span>e<span style="letter-spacing:-0.08em;">o</span><span style="letter-spacing:-0.03em;">p</span>le.</h1>
             <div class="hide-for-small" style="margin:4em 0 3em;">
-    			<?php // <a href="http://move.meringcarson.com" style="margin-right: 3em;" class="btn">Read the Blog</a> ?>
+    			<a href="http://move.meringcarson.com" style="margin-right: 1em;" class="btn morepadding">Read the Blog</a>
                 <a href="contact" class="btn morepadding">Contact Us</a>                
             </div>
             <div class="show-for-small" style="margin:3em 0 2em;">
-                <?php // <a class="btn expand" href="http://move.meringcarson.com">Read the Blog</a> ?>
+                 <a class="btn expand" href="http://move.meringcarson.com">Read the Blog</a>
                 <a class="btn expand" href="contact">Contact Us</a>                
             </div>            <h2 style="margin-bottom:0.6em;">Full Website Coming Soon</h2>
             <div class="clearfix"></div>

@@ -117,7 +117,6 @@ if( !$ROOT) {
                             }
                         ?>" class="
                     ">Careers</a></li>
-                    <li class="blogDiv"><a href="http://move.meringcarson.com" class="">MCPOV</a></li>
                 </ul>
                 <div class="more">
                     <ul class="sister-sites">
